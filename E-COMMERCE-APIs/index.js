@@ -33,8 +33,14 @@ const uri = "mongodb+srv://vercel-admin-user:eowHf6gEGSlKH0Ox@cluster0.uoeh5op.m
 // }
 // run().catch(console.dir);
 
+const userModel = require('../model/userModel.js');
+// const { default: Users } = require('../../E-COMMERCE-FRONTEND/src/pages/Admin/Users');
+const user = userModel.User;
 app.get("/users",async(req,res)=>{
-  res.send('Hello World');
+  //res.send('Hello World');
+  const my_user = await user.find(); 
+ // console.log(my_user);
+  res.send(my_user);
   // var myquery = { name: /^S/ };
   // const deleteManyResult = await user.deleteMany(myquery);
   // console.log(deleteManyResult);
