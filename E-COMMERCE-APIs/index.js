@@ -33,7 +33,12 @@ const uri = "mongodb+srv://vercel-admin-user:eowHf6gEGSlKH0Ox@cluster0.uoeh5op.m
 // }
 // run().catch(console.dir);
 
-
+app.get("/users",async(req,res)=>{
+  console.log("here");
+  // var myquery = { name: /^S/ };
+  // const deleteManyResult = await user.deleteMany(myquery);
+  // console.log(deleteManyResult);
+});
 
 
 
