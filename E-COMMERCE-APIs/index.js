@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
     extended: false
   }));
 const cors = require('cors');
-
+app.listen(8000);
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.header(
@@ -26,8 +26,8 @@ app.use(function(req, res, next) {
     );
     next();
   });
-const data_base = require("./config/db");
-data_base.Connect_db();
+// const data_base = require("./config/db");
+// data_base.Connect_db();
  const authRoutes = require("./routes/authRoute");
  const categoryRoutes = require("./routes/categoryRoutes");
  const productRoutes = require("./routes/productRoute");
@@ -43,8 +43,8 @@ var ejs = require('ejs');
 
 
 
-var bodyParser = require('body-parser');
-app.listen(5000);
+
+
 
 
 
