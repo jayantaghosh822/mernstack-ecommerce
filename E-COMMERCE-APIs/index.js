@@ -6,8 +6,8 @@ res.send('Hello World');
 })
 app.listen(8000);
 
-// const data_base = require("./config/db");
-// data_base.Connect_db();
+const data_base = require("./config/db");
+data_base.Connect_db();
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://vercel-admin-user:eowHf6gEGSlKH0Ox@cluster0.uoeh5op.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
