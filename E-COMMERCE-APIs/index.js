@@ -10,7 +10,7 @@ const data_base = require("./config/db");
 data_base.Connect_db();
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://arghag43:hF92jwZc6S0vqBu5@cluster0.xg3lddq.mongodb.net/ecommerce?retryWrites=true&w=majority";
+const uri = "mongodb+srv://vercel-admin-user:eowHf6gEGSlKH0Ox@cluster0.uoeh5op.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
