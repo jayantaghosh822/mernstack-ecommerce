@@ -33,7 +33,7 @@ const uri = "mongodb+srv://vercel-admin-user:eowHf6gEGSlKH0Ox@cluster0.uoeh5op.m
 // }
 // run().catch(console.dir);
 
-const userModel = require('../model/userModel.js');
+const userModel = require('./model/userModel.js');
 // const { default: Users } = require('../../E-COMMERCE-FRONTEND/src/pages/Admin/Users');
 const user = userModel.User;
 app.get("/users",async(req,res)=>{
