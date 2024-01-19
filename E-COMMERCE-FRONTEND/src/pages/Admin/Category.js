@@ -4,10 +4,10 @@ import axios from 'axios';
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
- import "react-toastify/dist/ReactToastify.css";
+//  import "react-toastify/dist/ReactToastify.css";
  // toast-configuration method,
 // it is compulsory method.
- toast.configure();
+//  toast.configure();
 const Category = () =>{
     const [catname , setCategoryName] = useState(null);
     const [catslug , setCategorySlug] = useState(null);

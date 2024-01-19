@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
  import "react-toastify/dist/ReactToastify.css";
  // toast-configuration method,
 // it is compulsory method.
- toast.configure();
+//  toast.configure();
 const EditCategory = () =>{
     const [catname , setCategoryName] = useState('');
     const [catslug , setCategorySlug] = useState('');
