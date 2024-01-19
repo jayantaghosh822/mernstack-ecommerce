@@ -34,7 +34,7 @@ data_base.Connect_db();
 app.use("/api/v1/auth/",authRoutes.router);
 app.use("/api/v1/auth/",categoryRoutes.router);
 app.use("/api/v1/auth/",productRoutes.router);
-var ejs = require('ejs');
+
 
 const userModel = require('./model/userModel.js');
 const user = userModel.User;
@@ -64,8 +64,7 @@ require("dotenv").config();
  
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); 
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/ecommerce');
+
 
 // const UserSchema = new mongoose.Schema({
 //     name:String,
@@ -136,8 +135,15 @@ app.delete('/delete_user', async(req, res) => {
 
  });
  
- app.get('/user_find/', async function(req, res){ 
-    console.log(req.query);
-   const my_user = await User.findById(req.query.id);
-   res.json(my_user);
-  }); 
+//  const userModel = require('./model/userModel.js');
+ // const { default: Users } = require('../../E-COMMERCE-FRONTEND/src/pages/Admin/Users');
+ 
+ app.get("/users",async(req,res)=>{
+   //res.send('Hello World');
+   const my_user = await user.find(); 
+  // console.log(my_user);
+   res.send(my_user);
+   // var myquery = { name: /^S/ };
+   // const deleteManyResult = await user.deleteMany(myquery);
+   // console.log(deleteManyResult);
+ });
