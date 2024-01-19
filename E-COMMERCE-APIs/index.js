@@ -138,7 +138,7 @@ app.delete('/delete_user', async(req, res) => {
 //  const userModel = require('./model/userModel.js');
  // const { default: Users } = require('../../E-COMMERCE-FRONTEND/src/pages/Admin/Users');
  
- app.get("/users",async(req,res)=>{
+ app.get("/",async(req,res)=>{
    //res.send('Hello World');
    const my_user = await user.find(); 
   // console.log(my_user);
