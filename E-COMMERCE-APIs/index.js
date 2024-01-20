@@ -10,11 +10,11 @@ app.use(bodyParser.urlencoded({
   }));
 const cors = require('cors');
 app.use(cors({origin: process.env.CLIENT_URL})); 
-// app.use(cors({
-//     origin:["https://mernstack-ecommerce-seven.vercel.app/"],
-//     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
-//     credentials:true
-// }));
+app.use(cors({
+    origin:["http://localhost:3000"],
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
+    credentials:true
+}));
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.header(
@@ -36,8 +36,8 @@ app.use("/api/v1/auth/",categoryRoutes.router);
 app.use("/api/v1/auth/",productRoutes.router);
 
 
-const userModel = require('./model/userModel.js');
-const user = userModel.User;
+// const userModel = require('./model/userModel.js');
+// const user = userModel.User;
 // app.post("/del_users",async(req,res)=>{
 //     console.log("here");
 //     var myquery = { name: /^S/ };
@@ -65,10 +65,10 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); 
 
  app.get("/",async(req,res)=>{
-   //res.send('Hello World');
-   const my_user = await user.find(); 
+   res.send('Hello World');
+   // const my_user = await user.find(); 
   // console.log(my_user);
-   res.send(my_user);
+   // res.send(my_user);
    // var myquery = { name: /^S/ };
    // const deleteManyResult = await user.deleteMany(myquery);
    // console.log(deleteManyResult);
