@@ -36,8 +36,8 @@ app.use("/api/v1/auth/",categoryRoutes.router);
 app.use("/api/v1/auth/",productRoutes.router);
 
 
-// const userModel = require('./model/userModel.js');
-// const user = userModel.User;
+const userModel = require('./model/userModel.js');
+const user = userModel.User;
 // app.post("/del_users",async(req,res)=>{
 //     console.log("here");
 //     var myquery = { name: /^S/ };
@@ -65,10 +65,10 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); 
 
  app.get("/",async(req,res)=>{
-   res.send('Hello World');
-   // const my_user = await user.find(); 
+   //res.send('Hello World');
+   const my_user = await user.find(); 
   // console.log(my_user);
-   // res.send(my_user);
+   res.send(my_user);
    // var myquery = { name: /^S/ };
    // const deleteManyResult = await user.deleteMany(myquery);
    // console.log(deleteManyResult);
