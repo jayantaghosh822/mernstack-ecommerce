@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({
     extended: false
   }));
 const cors = require('cors');
-// app.use(cors({origin: process.env.CLIENT_URL})); 
+app.use(cors({origin: process.env.CLIENT_URL})); 
 // app.use(cors({
 //     origin:["https://mernstack-ecommerce-seven.vercel.app/"],
 //     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
