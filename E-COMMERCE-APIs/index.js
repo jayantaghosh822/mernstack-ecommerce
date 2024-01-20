@@ -31,19 +31,19 @@ app.use(function(req, res, next) {
 // app.post('/api/v1/auth/register', (req, res) => { 
 //     console.log(req);
 // }); 
-app.use("/api/v1/auth/",authRoutes.router);
-app.use("/api/v1/auth/",categoryRoutes.router);
-app.use("/api/v1/auth/",productRoutes.router);
+// app.use("/api/v1/auth/",authRoutes.router);
+// app.use("/api/v1/auth/",categoryRoutes.router);
+// app.use("/api/v1/auth/",productRoutes.router);
 
 
-const userModel = require('./model/userModel.js');
-const user = userModel.User;
-app.post("/del_users",async(req,res)=>{
-    console.log("here");
-    var myquery = { name: /^S/ };
-    const deleteManyResult = await user.deleteMany(myquery);
-    console.log(deleteManyResult);
-})
+// const userModel = require('./model/userModel.js');
+// const user = userModel.User;
+// app.post("/del_users",async(req,res)=>{
+//     console.log("here");
+//     var myquery = { name: /^S/ };
+//     const deleteManyResult = await user.deleteMany(myquery);
+//     console.log(deleteManyResult);
+// })
 
 
 
