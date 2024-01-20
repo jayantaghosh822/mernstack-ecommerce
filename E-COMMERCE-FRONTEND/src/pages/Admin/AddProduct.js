@@ -53,7 +53,7 @@ const AddProduct = () =>{
       for (var key of formData.entries()) {
         console.log(key[0] + ", " + key[1]);
     }
-      await axios.post('http://localhost:5000/api/v1/auth/add-product/', formData, {
+      await axios.post(add_product_api, formData, {
          headers: { "Content-Type": "multipart/form-data" },    
            
           });
