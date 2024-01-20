@@ -65,10 +65,10 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); 
 
  app.get("/",async(req,res)=>{
-   //res.send('Hello World');
-   const my_user = await user.find(); 
+   res.send('Hello World');
+   // const my_user = await user.find(); 
   // console.log(my_user);
-   res.send(my_user);
+   // res.send(my_user);
    // var myquery = { name: /^S/ };
    // const deleteManyResult = await user.deleteMany(myquery);
    // console.log(deleteManyResult);
