@@ -5,7 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth";
 import { useHistory } from "react-router-dom";
 const Login = ()=>{
-
+ let apiUrl = process.env.REACT_APP_API_URL;
+ console.log(apiUrl);
+// const apiUrl = 'https://mernstack-ecommerce-seven.vercel.app';
+console.log(apiUrl);
 const [rname , setName]=useState("");
 const [remail , setEmail]=useState(""); 
 const [rphone , setPhone]=useState(""); 
@@ -23,6 +26,7 @@ const [loginerrormessage, setLoginError] = useState("");
 const [auth,setAuth]=useAuth();
 
 const regiterationhandleSubmit = (e) => {
+   
     e.preventDefault();
     console.log(rname);
     const name=rname;
@@ -30,7 +34,7 @@ const regiterationhandleSubmit = (e) => {
     const phone=rphone;
     const password=rpassword;
     const address=raddress;
-    axios.post('http://localhost:5000/api/v1/auth/register', {name,email,phone,password,address}, {
+    axios.post(apiUrl, {name,email,phone,password,address}, {
        headers: {
          'Content-Type': 'application/json'
        }
@@ -64,7 +68,7 @@ const regiterationhandleSubmit = (e) => {
    const navigate = useNavigate();
     const loginhandleSubmit = (e)=>{
         e.preventDefault();
-        axios.post('http://localhost:5000/api/v1/auth/login', {lemail,lpass}, {
+        axios.post(apiUrl, {lemail,lpass}, {
             headers: {
               'Content-Type': 'application/json'
             }
