@@ -10,11 +10,11 @@ app.use(bodyParser.urlencoded({
   }));
 const cors = require('cors');
 app.use(cors({origin: process.env.CLIENT_URL})); 
-app.use(cors({
-    origin:["http://localhost:3000/"],
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
-    credentials:true
-}));
+// app.use(cors({
+//     origin:["https://mernstack-ecommerce-seven.vercel.app/"],
+//     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
+//     credentials:true
+// }));
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.header(
