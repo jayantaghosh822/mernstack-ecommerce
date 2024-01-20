@@ -23,8 +23,8 @@ app.use(function(req, res, next) {
     );
     next();
   });
-// const data_base = require("./config/db");
-// data_base.Connect_db();
+const data_base = require("./config/db");
+data_base.Connect_db();
  // const authRoutes = require("./routes/authRoute");
  // const categoryRoutes = require("./routes/categoryRoutes");
  // const productRoutes = require("./routes/productRoute");
