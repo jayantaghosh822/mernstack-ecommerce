@@ -8,21 +8,21 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({
     extended: false
   }));
-const cors = require('cors');
-app.use(cors({origin: process.env.CLIENT_URL})); 
-app.use(cors({
-    origin:["https://mernstack-ecommerce-seven.vercel.app/"],
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
-    credentials:true
-}));
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    next();
-  });
+// const cors = require('cors');
+// app.use(cors({origin: process.env.CLIENT_URL})); 
+// app.use(cors({
+//     origin:["https://mernstack-ecommerce-seven.vercel.app/"],
+//     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
+//     credentials:true
+// }));
+// app.use(function(req, res, next) {
+//     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+//     res.header(
+//       'Access-Control-Allow-Headers',
+//       'Origin, X-Requested-With, Content-Type, Accept'
+//     );
+//     next();
+//   });
 const data_base = require("./config/db");
 data_base.Connect_db();
  const authRoutes = require("./routes/authRoute");
