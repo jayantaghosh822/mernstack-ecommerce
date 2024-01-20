@@ -25,9 +25,9 @@ app.use(function(req, res, next) {
   });
 // const data_base = require("./config/db");
 // data_base.Connect_db();
- const authRoutes = require("./routes/authRoute");
- const categoryRoutes = require("./routes/categoryRoutes");
- const productRoutes = require("./routes/productRoute");
+ // const authRoutes = require("./routes/authRoute");
+ // const categoryRoutes = require("./routes/categoryRoutes");
+ // const productRoutes = require("./routes/productRoute");
 // app.post('/api/v1/auth/register', (req, res) => { 
 //     console.log(req);
 // }); 
