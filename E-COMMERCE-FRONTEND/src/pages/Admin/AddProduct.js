@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 // it is compulsory method.
  toast.configure();
 const AddProduct = () =>{
+  let apiUrl = process.env.REACT_APP_API_URL;
     const [categories , setCategories] = useState([]);
     const [image, setImage] = useState(null);
     const [inputs, setFormData] = useState([]);
@@ -37,6 +38,7 @@ const AddProduct = () =>{
     // }
     const handleProductSubmit = async(e) =>{
       //getProduct();
+      let add_product_api = apiUrl+'api/v1/auth/add-product';
       const cat_id = params.id;
         e.preventDefault();
       //alert("clicked");
@@ -51,7 +53,7 @@ const AddProduct = () =>{
       for (var key of formData.entries()) {
         console.log(key[0] + ", " + key[1]);
     }
-      await axios.post('http://localhost:5000/api/v1/auth/add-product', formData, {
+      await axios.post('http://localhost:5000/api/v1/auth/add-product/', formData, {
          headers: { "Content-Type": "multipart/form-data" },    
            
           });
@@ -62,7 +64,8 @@ const AddProduct = () =>{
     }
   
     const allCategories = () =>{
-      axios.get('http://localhost:5000/api/v1/auth/all-categories', {
+      let get_category_api = apiUrl+'api/v1/auth/all-categories';
+      axios.get(get_category_api, {
         // body: {
         //   'cat_name': catname,
         //   'cat_slug':catslug

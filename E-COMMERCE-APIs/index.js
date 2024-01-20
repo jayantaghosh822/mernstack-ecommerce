@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 const cors = require('cors');
 app.use(cors({origin: process.env.CLIENT_URL})); 
 app.use(cors({
-    origin:["https://mernstack-ecommerce-seven.vercel.app/"],
+    origin:["http://localhost:3000"],
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
     credentials:true
 }));
@@ -25,15 +25,15 @@ app.use(function(req, res, next) {
   });
 const data_base = require("./config/db");
 data_base.Connect_db();
- // const authRoutes = require("./routes/authRoute");
- // const categoryRoutes = require("./routes/categoryRoutes");
- // const productRoutes = require("./routes/productRoute");
+ const authRoutes = require("./routes/authRoute");
+ const categoryRoutes = require("./routes/categoryRoutes");
+ const productRoutes = require("./routes/productRoute");
 // app.post('/api/v1/auth/register', (req, res) => { 
 //     console.log(req);
 // }); 
-// app.use("/api/v1/auth/",authRoutes.router);
-// app.use("/api/v1/auth/",categoryRoutes.router);
-// app.use("/api/v1/auth/",productRoutes.router);
+app.use("/api/v1/auth/",authRoutes.router);
+app.use("/api/v1/auth/",categoryRoutes.router);
+app.use("/api/v1/auth/",productRoutes.router);
 
 
 // const userModel = require('./model/userModel.js');

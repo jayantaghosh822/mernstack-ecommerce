@@ -3,7 +3,7 @@ var app = express();
 const fs = require('fs');
 const multer = require('multer');
 const cors = require('cors');
-var slugify = require('slugify')
+var slugify = require('slugify');
 // var bodyParser = require('body-parser');
 // const Grid = require('gridfs-stream');
 
@@ -17,13 +17,13 @@ const product = productModel.Product;
 const create_product = async(req,res) =>{
     let existing_product=null;
     // const form = JSON.parse(req.body.formData);
-// console.log(req.body);
-// console.log(req.file);
-myJSON = JSON.parse(req.body.formData);
-//console.log(myJSON);
-req.body.formData = myJSON;
- console.log("1pro_slug",req.body.formData.slug);
- console.log("1pro_slug",req.body.formData.name);
+ console.log(req.body);
+ console.log(req.file);
+ myJSON = JSON.parse(req.body.formData);
+// //console.log(myJSON);
+ req.body.formData = myJSON;
+ console.log("pro_slug",req.body.formData.slug);
+ console.log("pro_name",req.body.formData.name);
 let slug="";
 if(req.body.formData.slug==null){
     slug = slugify( req.body.formData.name, '_');
@@ -31,28 +31,34 @@ if(req.body.formData.slug==null){
     console.log("2pro_slug",slug);
     console.log("3pro_slug",req.body.formData.slug);
 }
+if(req.body.formData.slug==""){
+    slug = slugify( req.body.formData.name, '_');
+    req.body.formData.slug = slug;
+    // console.log("2pro_slug",slug);
+    // console.log("3pro_slug",req.body.formData.slug);
+}
 if( (req.body.formData.slug!="") && (req.body.formData.name!="") ){
 // let slug = req.body.formData.slug;
 let name = req.body.formData.name;
  existing_product=await product.findOne({slug:req.body.formData.slug});
-//console.log(existing_product);
+console.log(existing_product);
 if(existing_product!=null){
     return res.status(200).send({
         success:false,
         messgae:"Product Exists With Same Slug"
     })
 }
-console.log(slug);
+console.log("line 45",slug);
 if(slug==null){
    return res.status(200).send({
         success:false,
         messgae:"Product Must Have A slug",
     })
 }
-if(name==null){
+if((name==null)||(name=="")){
    return res.status(200).send({
         success:false,
-        messgae:"Product Must Have A name"
+        message:"Product Must Have A name"
     })
 }
 }

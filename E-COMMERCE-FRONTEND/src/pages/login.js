@@ -3,7 +3,9 @@ import axios from 'axios';
 import Layout from "../components/Layout";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth";
+import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
+toast.configure();
 const Login = ()=>{
  let apiUrl = process.env.REACT_APP_API_URL;
  console.log(apiUrl);
@@ -34,7 +36,8 @@ const regiterationhandleSubmit = (e) => {
     const phone=rphone;
     const password=rpassword;
     const address=raddress;
-    axios.post(apiUrl, {name,email,phone,password,address}, {
+    const register_api = apiUrl+'api/v1/auth/register';
+    axios.post(register_api, {name,email,phone,password,address}, {
        headers: {
          'Content-Type': 'application/json'
        }
@@ -68,7 +71,8 @@ const regiterationhandleSubmit = (e) => {
    const navigate = useNavigate();
     const loginhandleSubmit = (e)=>{
         e.preventDefault();
-        axios.post(apiUrl, {lemail,lpass}, {
+        const login_api = apiUrl+'api/v1/auth/login';
+        axios.post(login_api, {lemail,lpass}, {
             headers: {
               'Content-Type': 'application/json'
             }
