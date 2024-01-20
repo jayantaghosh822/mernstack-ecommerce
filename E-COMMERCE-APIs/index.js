@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({
     extended: false
   }));
 const cors = require('cors');
-
+app.use(cors({origin: process.env.CLIENT_URL})); 
 app.use(cors({
     origin:["https://mernstack-ecommerce-seven.vercel.app/"],
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
@@ -25,25 +25,25 @@ app.use(function(req, res, next) {
   });
 const data_base = require("./config/db");
 data_base.Connect_db();
- const authRoutes = require("./routes/authRoute");
- const categoryRoutes = require("./routes/categoryRoutes");
- const productRoutes = require("./routes/productRoute");
+ // const authRoutes = require("./routes/authRoute");
+ // const categoryRoutes = require("./routes/categoryRoutes");
+ // const productRoutes = require("./routes/productRoute");
 // app.post('/api/v1/auth/register', (req, res) => { 
 //     console.log(req);
 // }); 
-app.use("/api/v1/auth/",authRoutes.router);
-app.use("/api/v1/auth/",categoryRoutes.router);
-app.use("/api/v1/auth/",productRoutes.router);
+// app.use("/api/v1/auth/",authRoutes.router);
+// app.use("/api/v1/auth/",categoryRoutes.router);
+// app.use("/api/v1/auth/",productRoutes.router);
 
 
-const userModel = require('./model/userModel.js');
-const user = userModel.User;
-app.post("/del_users",async(req,res)=>{
-    console.log("here");
-    var myquery = { name: /^S/ };
-    const deleteManyResult = await user.deleteMany(myquery);
-    console.log(deleteManyResult);
-})
+// const userModel = require('./model/userModel.js');
+// const user = userModel.User;
+// app.post("/del_users",async(req,res)=>{
+//     console.log("here");
+//     var myquery = { name: /^S/ };
+//     const deleteManyResult = await user.deleteMany(myquery);
+//     console.log(deleteManyResult);
+// })
 
 
 
@@ -65,10 +65,10 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); 
 
  app.get("/",async(req,res)=>{
-   //res.send('Hello World');
-   const my_user = await user.find(); 
+   res.send('Hello World');
+   // const my_user = await user.find(); 
   // console.log(my_user);
-   res.send(my_user);
+   // res.send(my_user);
    // var myquery = { name: /^S/ };
    // const deleteManyResult = await user.deleteMany(myquery);
    // console.log(deleteManyResult);
