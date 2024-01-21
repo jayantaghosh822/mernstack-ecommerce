@@ -1,7 +1,9 @@
 // import mongoose from 'mongoose';
 var express = require('express');
 const mongoose = require('mongoose');
-const uri = "mongodb+srv://vercel-admin-user-65a42be41fcdc35ed0f17878:XTBsRgoMt5i27Zcn@cluster0.0o7bjqw.mongodb.net/ecommerce?retryWrites=true&w=majority";
+
+const uri = "mongodb+srv://render:Kh5hhDObv8QDxhN5@cluster0.fyhrqyd.mongodb.net/?retryWrites=true&w=majority"
+// const uri = "mongodb+srv://vercel-admin-user-65a42be41fcdc35ed0f17878:XTBsRgoMt5i27Zcn@cluster0.0o7bjqw.mongodb.net/ecommerce?retryWrites=true&w=majority";
 // mongoose.connect('mongodb://127.0.0.1:27017/ecommerce');
 const Connect_db = async()=>{
     try{
