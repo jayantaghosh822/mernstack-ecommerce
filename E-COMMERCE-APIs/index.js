@@ -16,7 +16,7 @@ app.use(cors({
     credentials:true
 }));
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000','https://e-commerce-server-ry9p.onrender.com');
     res.header(
       'Access-Control-Allow-Headers',
       'Origin, X-Requested-With, Content-Type, Accept'
