@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 const cors = require('cors');
 app.use(cors({origin: process.env.CLIENT_URL})); 
 app.use(cors({
-    origin:["http://localhost:3000","https://ephemeral-moonbeam-c20363.netlify.app/"],
+    origin:["http://localhost:3000","https://ephemeral-moonbeam-c20363.netlify.app"],
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
     credentials:true
 }));
