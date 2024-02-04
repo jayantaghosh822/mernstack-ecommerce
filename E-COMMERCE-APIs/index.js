@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 const cors = require('cors');
 app.use(cors({origin: process.env.CLIENT_URL})); 
 app.use(cors({
-    origin:["http://localhost:3000"],
+    origin:["http://localhost:3000","https://65bfbd7bf775d97a369d7db3--deluxe-faloodeh-682d02.netlify.app"],
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
     credentials:true
 }));
