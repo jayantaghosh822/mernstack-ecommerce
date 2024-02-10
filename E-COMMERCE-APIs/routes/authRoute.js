@@ -30,7 +30,7 @@ router.get('/user-auth' , token_middleware.requireSignIn,(req,res)=>{
     res.status(200).send({ok:true});
 });
 router.get('/admin-auth' , token_middleware.requireSignIn,token_middleware.is_admin,(req,res)=>{
-    //console.log(req);
+    console.log(req);
     res.status(200).send({ok:true});
 });
 router.get('/all-users',all_user);
