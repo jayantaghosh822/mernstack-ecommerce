@@ -16,7 +16,7 @@ app.use(cors({
     credentials:true
 }));
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'https://thriving-mandazi-2580ba.netlify.app');
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000', 'https://thriving-mandazi-2580ba.netlify.app');
     res.header(
       'Access-Control-Allow-Headers',
       'Origin, X-Requested-With, Content-Type, Accept'
