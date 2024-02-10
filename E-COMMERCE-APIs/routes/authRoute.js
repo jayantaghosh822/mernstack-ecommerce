@@ -31,7 +31,7 @@ router.get('/user-auth' , token_middleware.requireSignIn,(req,res)=>{
 });
 router.get('/admin-auth' , token_middleware.requireSignIn,token_middleware.is_admin,(req,res)=>{
     //console.log(req);
-    res.status(200).send({ok:true});
+    res.status(200).send({ok:false});
 });
 router.get('/all-users',all_user);
 router.post('/verify-email',verifyEmail);
