@@ -11,7 +11,11 @@ const UserSchema = new mongoose.Schema(
     required:true,
     unique:true,
    },
-  
+   parent:{
+    type:String,
+    required:true,
+    trim:true,
+   },
 }
 
 );
