@@ -210,7 +210,7 @@ if(existing_product==null && req.body.formData.name!=null ){
    catch(error){
     console.log(error);
    }
-   YourModel.findByIdAndUpdate(prod_id, updateData, { new: true })
+   product.findByIdAndUpdate(prod_id, updateData, { new: true })
     .then(updatedProduct => {
         if (!updatedProduct) {
             return res.status(404).json({ error: 'Product not found' });
