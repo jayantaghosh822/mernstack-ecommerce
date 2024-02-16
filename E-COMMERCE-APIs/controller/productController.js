@@ -199,7 +199,7 @@ if(existing_product==null && req.body.formData.name!=null ){
            updateData = {
             name:req.body.formData.name,
             description:req.body.formData.name,
-            slug:slug,
+            slug:req.body.formData.slug,
             price:req.body.formData.price,
             quan:req.body.formData.quan,
             shipping:req.body.formData.shipping,
@@ -215,7 +215,7 @@ if(existing_product==null && req.body.formData.name!=null ){
               updateData = {
             name:req.body.formData.name,
             description:req.body.formData.name,
-            slug:slug,
+            slug:req.body.formData.slug,
             price:req.body.formData.price,
             quan:req.body.formData.quan,
             shipping:req.body.formData.shipping,
