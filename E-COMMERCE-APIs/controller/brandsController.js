@@ -38,7 +38,7 @@ if(name==null){
 if(existing_brand==null && slug!=null && name!=null ){
     const name =  req.body.brandname;
     const slug = req.body.brandslug;
-    new_brand = await new category({name,slug}).save();
+    new_brand = await new brand({name,slug}).save();
     console.log(new_brand);
     return res.status(200).send({
         success:true,
@@ -85,7 +85,7 @@ const delete_brand = async(req,res) =>{
     //console.log(req.headers);
     const brand_id = req.headers.cat_id;
     console.log(brand_id);
-    const get_brand = await category.findOne({_id:brand_id});
+    const get_brand = await brand.findOne({_id:brand_id});
     console.log(get_brand.name);
     if(get_brand){
         return res.status(200).send({
