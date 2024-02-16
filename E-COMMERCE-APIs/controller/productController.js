@@ -188,7 +188,7 @@ if(existing_product==null && req.body.formData.name!=null ){
         req.body.formData.shipping=false;
     }
     // const {_id,name,description,slug,price,quan,shipping,category} = req.body.formData;
-    const {image} = req.file;
+    const {image} =req.body.image;
     let prod_id = req.body.formData._id;
     let updateData="";
     try{
