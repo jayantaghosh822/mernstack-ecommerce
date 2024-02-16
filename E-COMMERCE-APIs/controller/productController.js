@@ -188,7 +188,7 @@ if(existing_product==null && req.body.formData.name!=null ){
         req.body.formData.shipping=false;
     }
     // const {_id,name,description,slug,price,quan,shipping,category} = req.body.formData;
-    const {image} = req.body.formData.image;
+    const {image} = req.file;
     let prod_id = req.body.formData._id;
     let updateData="";
     try{
@@ -205,7 +205,7 @@ if(existing_product==null && req.body.formData.name!=null ){
             shipping:req.body.formData.shipping,
             category:req.body.formData.category,
         };
-        if(image!=null){
+        if(req.file!=null){
          
            let buffer_data = fs.readFileSync(req.file.path);
             let content_type = req.file.mimetype;
