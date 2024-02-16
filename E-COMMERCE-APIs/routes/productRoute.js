@@ -19,6 +19,7 @@ const token_middleware = require ('../middlewares/authMiddleware');
 const registerControllers = require('../controller/productController');
 const create_product = registerControllers.create_product;
 const  get_product = registerControllers.get_product ;
+const  update_product = registerControllers.update_product ;
  const all_products = registerControllers.all_products;
  const del_product = registerControllers.del_product;
  
@@ -41,6 +42,7 @@ router.get('/all-products',all_products);
 router.get('/get-product',get_product);
 router.delete('/product-delete',del_product);
 router.post('/add-product',uploadStorage.single('image'),create_product);
+router.post('/update-product',uploadStorage.single('image'),update_product);
 router.get('/get-product-photo/:p_id', async(req,res)=>{
   try{
     console.log(req.params.p_id);
