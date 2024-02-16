@@ -188,7 +188,7 @@ if(existing_product==null && req.body.formData.name!=null ){
         req.body.formData.shipping=false;
     }
     // const {_id,name,description,slug,price,quan,shipping,category} = req.body.formData;
-    const {image} =req.body.image;
+    
     let prod_id = req.body.formData._id;
     let updateData="";
     try{
@@ -206,7 +206,8 @@ if(existing_product==null && req.body.formData.name!=null ){
             category:req.body.formData.category,
         };
         console.log(updateData);
-        if(req.body.image!=null){
+        if(req.body.image==undefined){
+        if(req.file!=null){
          
            let buffer_data = fs.readFileSync(req.file.path);
             let content_type = req.file.mimetype;
@@ -223,6 +224,7 @@ if(existing_product==null && req.body.formData.name!=null ){
             'photo.data':buffer_data,
             'photo.contentType' :content_type,
         };
+        }
         }
          // await new_product.save();
         //console.log(new_product);
