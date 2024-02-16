@@ -113,15 +113,15 @@ const del_product = async(req,res) =>{
     }
    
  }
- const get_category = async(req,res) =>{
+ const get_product = async(req,res) =>{
     //console.log(req.headers);
-    const cat_id = req.headers.cat_id;
-    const get_categories = await category.findOne({_id:cat_id});
-    console.log(get_categories);
-    if(get_categories){
+    const pro_id = req.headers.pro_id;
+    const get_products = await category.findOne({_id:pro_id});
+    console.log(get_products);
+    if(get_products){
         return res.status(200).send({
             success:true,
-            result:get_categories
+            result:get_products
         })
     }
    
