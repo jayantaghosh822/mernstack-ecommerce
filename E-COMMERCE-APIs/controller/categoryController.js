@@ -38,7 +38,8 @@ if(name==null){
 if(existing_category==null && slug!=null && name!=null ){
     const name = req.body.catname;
     const slug = req.body.catslug;
-    new_catgory = await new category({name,slug}).save();
+    const parent_slug = req.body.parent_catslug;
+    new_catgory = await new category({name,slug,parent_slug}).save();
     console.log(new_catgory);
     return res.status(200).send({
         success:true,
