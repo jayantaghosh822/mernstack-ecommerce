@@ -81,7 +81,7 @@ const delete_brand = async(req,res) =>{
    
  }
 
- const get_category_name_by_id = async(req,res) =>{
+ const get_brand_name_by_id = async(req,res) =>{
     //console.log(req.headers);
     const brand_id = req.headers.cat_id;
     console.log(brand_id);
