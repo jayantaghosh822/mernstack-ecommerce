@@ -46,7 +46,7 @@ if(existing_brand==null && slug!=null && name!=null ){
     })
 }
 }
-const all_category = async(req,res) =>{
+const all_brands = async(req,res) =>{
    const all_brands = await brand.find();
    console.log(all_brands);
    return res.status(200).send({
