@@ -205,7 +205,7 @@ if(existing_product==null && req.body.formData.name!=null ){
             shipping:req.body.formData.shipping,
             category:req.body.formData.category,
         };
-        if(req.file.path!=null){
+        if(req.body.formData.image!=null){
          
            let buffer_data = fs.readFileSync(req.file.path);
             let content_type = req.file.mimetype;
