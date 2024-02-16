@@ -195,31 +195,30 @@ if(existing_product==null && req.body.formData.name!=null ){
          // new_product = new product({name,description,slug,price,quan,shipping,category});
          //  new_product.photo.data = fs.readFileSync(req.file.path);
          //  new_product.photo.contentType =req.file.mimetype;
-        const { name, description, slug, price, quan, shipping, category } = req.body.formData;
+        
            updateData = {
-            name,
-            description,
-            slug,
-            price,
-            quan,
-            shipping,
-            category
+            name:req.body.formData.name,
+            description:req.body.formData.name,
+            slug:slug,
+            price:req.body.formData.price,
+            quan:req.body.formData.quan,
+            shipping:req.body.formData.shipping,
+            category:req.body.formData.category,
         };
         if(req.file.path!=null){
-            req.body.formData.photo.data = fs.readFileSync(req.file.path);
-              req.body.formData.photo.contentType = req.file.mimetype;
-            const { name, description, slug, price, quan, shipping, category ,photo.data ,photo.contentType  } = req.body.formData;
-            photo.data = fs.readFileSync(req.file.path);
+         
+           let buffer_data = fs.readFileSync(req.file.path);
+            let content_type = req.file.mimetype;
               updateData = {
-            name,
-            description,
-            slug,
-            price,
-            quan,
-            shipping,
-            category,
-            photo.data,
-            photo.contentType
+            name:req.body.formData.name,
+            description:req.body.formData.name,
+            slug:slug,
+            price:req.body.formData.price,
+            quan:req.body.formData.quan,
+            shipping:req.body.formData.shipping,
+            category:req.body.formData.category,
+            'photo.data':buffer_data,
+            'photo.contentType' :content_type,
         };
         }
          // await new_product.save();
