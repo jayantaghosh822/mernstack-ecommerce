@@ -127,7 +127,7 @@ const del_product = async(req,res) =>{
    
  }
 
- const create_product = async(req,res) =>{
+ const update_product = async(req,res) =>{
     let existing_product=null;
     // const form = JSON.parse(req.body.formData);
  console.log(req.body);
@@ -223,4 +223,4 @@ if(existing_product==null && req.body.formData.name!=null ){
 }
 }
  
-module.exports = {create_product,all_products,del_product,get_product,update_category};
+module.exports = {create_product,all_products,del_product,get_product,update_product};
