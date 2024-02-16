@@ -205,10 +205,12 @@ if(existing_product==null && req.body.formData.name!=null ){
             shipping:req.body.formData.shipping,
             category:req.body.formData.category,
         };
-        if(req.body.formData.image!=null){
+        if(req.file.path!=null){
          
            let buffer_data = fs.readFileSync(req.file.path);
             let content_type = req.file.mimetype;
+            console.log(buffer_data);
+            console.log(content_type);
               updateData = {
             name:req.body.formData.name,
             description:req.body.formData.name,
