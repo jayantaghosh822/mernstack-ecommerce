@@ -18,6 +18,7 @@ const product = productModel.Product;
 const token_middleware = require ('../middlewares/authMiddleware');
 const registerControllers = require('../controller/productController');
 const create_product = registerControllers.create_product;
+const  get_product = registerControllers.get_product ;
  const all_products = registerControllers.all_products;
  const del_product = registerControllers.del_product;
  
@@ -37,6 +38,7 @@ const storage = multer.diskStorage({
 // const storage = multer.memoryStorage();
 const uploadStorage = multer({ storage: storage });
 router.get('/all-products',all_products);
+router.get('/get-product',get_product);
 router.delete('/product-delete',del_product);
 router.post('/add-product',uploadStorage.single('image'),create_product);
 router.get('/get-product-photo/:p_id', async(req,res)=>{
