@@ -11,7 +11,7 @@ const brandModel = require('../model/brandModel.js');
 
 const brand = brandModel.Brand;
 
-const create_category = async(req,res) =>{
+const create_brand = async(req,res) =>{
 console.log(req.body);
 const slug = req.body.brandslug;
 const name = req.body.brandname;
