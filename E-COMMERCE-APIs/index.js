@@ -36,7 +36,7 @@ data_base.Connect_db();
 app.use("/api/v1/auth/",authRoutes.router);
 app.use("/api/v1/auth/",categoryRoutes.router);
 app.use("/api/v1/auth/",categoryRoutes.router);
-app.use("/api/v1/auth/",brandtRoutes.router);
+app.use("/api/v1/auth/",brandsRoutes.router);
 
 
 // const userModel = require('./model/userModel.js');
