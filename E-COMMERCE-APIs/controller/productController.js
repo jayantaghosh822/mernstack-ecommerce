@@ -131,7 +131,7 @@ const del_product = async(req,res) =>{
     let existing_product=null;
     // const form = JSON.parse(req.body.formData);
  console.log(req.body);
- console.log(req.file);
+ console.log(req.body.image);
  myJSON = JSON.parse(req.body.formData);
 // //console.log(myJSON);
  req.body.formData = myJSON;
@@ -205,7 +205,8 @@ if(existing_product==null && req.body.formData.name!=null ){
             shipping:req.body.formData.shipping,
             category:req.body.formData.category,
         };
-        if(req.file!=null){
+        console.log(updateData);
+        if(req.body.image!=null){
          
            let buffer_data = fs.readFileSync(req.file.path);
             let content_type = req.file.mimetype;
