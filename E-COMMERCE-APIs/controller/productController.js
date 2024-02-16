@@ -148,4 +148,4 @@ const del_product = async(req,res) =>{
    
  }
  
-module.exports = {create_product,all_products,del_product,get_category,update_category};
+module.exports = {create_product,all_products,del_product,get_product,update_category};
