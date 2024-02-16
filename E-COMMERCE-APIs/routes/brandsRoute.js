@@ -1,8 +1,8 @@
 // var path = require('path');
 // var filename = path.basename('/Users/Refsnes/demo_path.js');
 // const registerControllers = require('E:\\Mern ECommerce\\E-COMMERCE-APIs\\controller\\authController.js');
-const categoryModel = require('../model/categoryModel.js');
-const category = categoryModel.Category;
+const brandModel = require('../model/brandsModel.js');
+const brand = brandModel.Category;
 const token_middleware = require ('../middlewares/authMiddleware');
 const registerControllers = require('../controller/categoryController');
 const create_brand = registerControllers.create_brand;
