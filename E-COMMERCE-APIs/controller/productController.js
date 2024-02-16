@@ -192,9 +192,10 @@ if(existing_product==null && req.body.formData.name!=null ){
     let prod_id = req.body.formData._id;
     const updateData="";
     try{
-         new_product = new product({name,description,slug,price,quan,shipping,category});
-          new_product.photo.data = fs.readFileSync(req.file.path);
-          new_product.photo.contentType =req.file.mimetype;
+         // new_product = new product({name,description,slug,price,quan,shipping,category});
+         //  new_product.photo.data = fs.readFileSync(req.file.path);
+         //  new_product.photo.contentType =req.file.mimetype;
+        const { name, description, slug, price, quan, shipping, category } = req.body.formData;
            updateData = {
             name,
             description,
@@ -204,8 +205,24 @@ if(existing_product==null && req.body.formData.name!=null ){
             shipping,
             category
         };
-        
-         await new_product.save();
+        if(req.file.path!=null){
+            req.body.formData.photo.data = fs.readFileSync(req.file.path);
+              req.body.formData.photo.contentType = req.file.mimetype;
+            const { name, description, slug, price, quan, shipping, category ,photo.data ,photo.contentType  } = req.body.formData;
+            photo.data = fs.readFileSync(req.file.path);
+              updateData = {
+            name,
+            description,
+            slug,
+            price,
+            quan,
+            shipping,
+            category,
+            photo.data,
+            photo.contentType
+        };
+        }
+         // await new_product.save();
         //console.log(new_product);
     }
    catch(error){
