@@ -116,7 +116,7 @@ const del_product = async(req,res) =>{
  const get_product = async(req,res) =>{
     //console.log(req.headers);
     const pro_id = req.headers.pro_id;
-    const get_products = await category.findOne({_id:pro_id});
+    const get_products = await product.findOne({_id:pro_id});
     console.log(get_products);
     if(get_products){
         return res.status(200).send({
