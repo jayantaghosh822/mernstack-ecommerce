@@ -4,7 +4,7 @@
 const brandModel = require('../model/brandModel.js');
 const brand = brandModel.Category;
 const token_middleware = require ('../middlewares/authMiddleware');
-const registerControllers = require('../controller/categoryController');
+const registerControllers = require('../controller/brandsController');
 const create_brand = registerControllers.create_brand;
 const all_brands = registerControllers.all_brands;
 const delete_brand = registerControllers.delete_brand;
