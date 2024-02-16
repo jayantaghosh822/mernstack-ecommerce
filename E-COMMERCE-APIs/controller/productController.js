@@ -190,7 +190,7 @@ if(existing_product==null && req.body.formData.name!=null ){
     const {_id,name,description,slug,price,quan,shipping,category} = req.body.formData;
     //const {image} = req.body.formData.images;
     let prod_id = req.body.formData._id;
-    const updateData="";
+    let updateData="";
     try{
          // new_product = new product({name,description,slug,price,quan,shipping,category});
          //  new_product.photo.data = fs.readFileSync(req.file.path);
