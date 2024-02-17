@@ -116,5 +116,15 @@ const delete_category = async(req,res) =>{
     }
    
  }
- 
-module.exports = {create_category,all_category,delete_category,get_category,get_category_name_by_id,update_category};
+
+const child_categories = async(req,res) =>{
+     const cat_id = req.headers.cat_id;
+     const sub_cat = await category.find({parent:cat_id});
+    if(sub_cat){
+     return res.status(200).send({
+            success:true,
+            result:sub_cat
+        })
+    }
+}
+module.exports = {create_category,all_category,delete_category,get_category,get_category_name_by_id,update_category,child_categories};
