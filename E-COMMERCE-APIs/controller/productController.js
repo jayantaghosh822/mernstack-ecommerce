@@ -251,6 +251,7 @@ if(existing_product==null && req.body.formData.name!=null ){
 
 const product_by_cat_slug = async(req,res)=>{
       const cat_slug = req.headers.cat_slug;
+    console.log(cat_slug);
       const get_categories = await category.findOne({slug:cat_slug});
       if(get_categories){
       // let cat_id = get_categories._id;
