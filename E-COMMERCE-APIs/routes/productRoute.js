@@ -22,7 +22,7 @@ const  get_product = registerControllers.get_product ;
 const  update_product = registerControllers.update_product ;
  const all_products = registerControllers.all_products;
  const del_product = registerControllers.del_product;
- 
+ const product_by_cat_slug = registerControllers.product_by_cat_slug;
 // const delete_category = registerControllers.delete_category;
 // const get_category = registerControllers.get_category;
 // const update_category = registerControllers.update_category;
@@ -40,7 +40,8 @@ const storage = multer.diskStorage({
 const uploadStorage = multer({ storage: storage });
 router.get('/all-products',all_products);
 router.get('/get-product',get_product);
-router.delete('/product-delete',del_product);
+router.get('/product_by_cat_slug',get_product);
+router.delete('/product-delete',product_by_cat_slug);
 router.post('/add-product',uploadStorage.single('image'),create_product);
 router.post('/update-product',uploadStorage.single('image'),update_product);
 router.get('/get-product-photo/:p_id', async(req,res)=>{
