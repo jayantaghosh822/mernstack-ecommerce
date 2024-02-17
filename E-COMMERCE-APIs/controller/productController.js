@@ -246,5 +246,14 @@ if(existing_product==null && req.body.formData.name!=null ){
     });
 }
 }
- 
+
+const product_by_cat_slug = (req,res)=>{
+      const cat_slug = req.headers.cat_slug;
+      const get_categories = await category.findOne({slug:cat_slug});
+      if(get_categories){
+      let cat_id = get_categories._id;
+      console.log(cat_id);
+      }
+}
+
 module.exports = {create_product,all_products,del_product,get_product,update_product};
