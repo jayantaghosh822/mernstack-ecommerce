@@ -204,6 +204,7 @@ if(existing_product==null && req.body.formData.name!=null ){
             quan:req.body.formData.quan,
             shipping:req.body.formData.shipping,
             category:req.body.formData.category,
+            brand:req.body.formData.brand,
         };
         console.log(updateData);
         if(req.body.image==undefined){
@@ -221,6 +222,7 @@ if(existing_product==null && req.body.formData.name!=null ){
             quan:req.body.formData.quan,
             shipping:req.body.formData.shipping,
             category:req.body.formData.category,
+            brand:req.body.formData.brand,
             'photo.data':buffer_data,
             'photo.contentType' :content_type,
         };
