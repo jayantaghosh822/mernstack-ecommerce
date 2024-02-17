@@ -253,8 +253,8 @@ const product_by_cat_slug = async(req,res)=>{
       const cat_slug = req.headers.cat_slug;
       const get_categories = await category.findOne({slug:cat_slug});
       if(get_categories){
-      let cat_id = get_categories._id;
-      console.log(cat_id);
+      // let cat_id = get_categories._id;
+      console.log(get_categories);
       }
 }
 
