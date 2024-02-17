@@ -256,4 +256,4 @@ const product_by_cat_slug = (req,res)=>{
       }
 }
 
-module.exports = {create_product,all_products,del_product,get_product,update_product};
+module.exports = {create_product,all_products,del_product,get_product,update_product,product_by_cat_slug};
