@@ -12,7 +12,9 @@ const productModel = require('../model/productModel.js');
 const product = productModel.Product;
 // app.use(bodyParser.urlencoded({ extended: true })); 
 
+const categoryModel = require('../model/categoryModel.js');
 
+const category = categoryModel.Category;
 
 const create_product = async(req,res) =>{
     let existing_product=null;
@@ -247,7 +249,7 @@ if(existing_product==null && req.body.formData.name!=null ){
 }
 }
 
-const product_by_cat_slug = (req,res)=>{
+const product_by_cat_slug = async(req,res)=>{
       const cat_slug = req.headers.cat_slug;
       const get_categories = await category.findOne({slug:cat_slug});
       if(get_categories){
