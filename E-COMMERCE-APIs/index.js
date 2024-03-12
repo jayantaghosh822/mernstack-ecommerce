@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({
     extended: false
   }));
 const cors = require('cors');
+app.use(express.static('public'));
 app.use(cors({origin: process.env.CLIENT_URL})); 
 app.use(cors({
     origin:["http://localhost:3000","https://thriving-mandazi-2580ba.netlify.app"],
